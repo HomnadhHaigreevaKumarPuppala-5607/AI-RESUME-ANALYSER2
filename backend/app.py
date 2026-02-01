@@ -9,9 +9,10 @@ CORS(app)
 def home():
     return "Backend is alive"
 
-app.register_blueprint(analyze_bp, url_prefix="/api/analyze")
+app.register_blueprint(analyze_bp, url_prefix="/api")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
+
 
 
