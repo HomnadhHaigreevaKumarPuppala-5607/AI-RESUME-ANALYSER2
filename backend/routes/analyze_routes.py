@@ -6,8 +6,9 @@ analyze_bp = Blueprint("analyze", __name__)
 @analyze_bp.route("/", methods=["POST"])
 def analyze():
     data = request.get_json()
-    resume_text = data.get("resume", "")
+    resume = data.get("resume", "")
     job = data.get("job", "")
 
-    result = analyze_resume(resume_text, job)
+    result = analyze_resume(resume, job)
     return jsonify(result)
+
